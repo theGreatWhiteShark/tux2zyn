@@ -5,7 +5,15 @@ jack = require( 'luajack' )
 posix = require( 'posix' )
 
 -- Open a JACK client - Dummy, we won't use this one
-jack_client = jack.client_open( "tux2zyn" )
+jack_client, jack_error_message =
+   pcall( jack.client_open, "tux2zyn", { no_start_server = true } )
+
+-- Check whether the server was actually running.
+if not jack_client and string.find( jack_error_message,
+				    "server_failed" ) then
+   error( "The JACK server is not running! Please start it beforehand"
+	)
+end
 
 -- Find the local configuration files of ZynAddSubFX
 index_zynaddsubfx = 0
