@@ -24,8 +24,8 @@ mkdir build
 cd build
 
 # Generate a customized environment to compile the source code in. If
-you got an error in here, you have to install the required
-(development) packages using your distributions' package manager.
+# you got an error in here, you have to install the required
+# (development) packages using your distributions' package manager.
 cmake ..
 
 # Build the program
@@ -55,11 +55,21 @@ least version **5.3** and
 [LuaRocks](https://github.com/luarocks/luarocks/wiki/Download)
 installed. 
 
-In order to use the script in this repository you have to install two
-additional Lua packages.
+In order to use the script in this repository you have to install the
+[LuaJack](https://github.com/stetre/luajack) and the [luaposix](https://github.com/luaposix/luaposix) packages.
+
+The first one you have to clone from Github yourself.
 
 ``` bash
-luarocks install --local luaposix luajack
+git clone https://github.com/stetre/luajack
+cd luajack
+make
+sudo make install
+```
+For the second one we use the Lua package manager.
+
+``` bash
+luarocks install --local luaposix
 ```
 
 # Usage
