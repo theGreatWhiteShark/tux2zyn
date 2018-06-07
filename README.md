@@ -1,3 +1,7 @@
+I'm leaving this sinking ship. If you like this project, checked out the maintained version on [GitLab.com](https://gitlab.com/theGreatWhiteShark/tux2zyn).
+
+---
+
 A Lua (>=5.3) script starting up both
 [TuxGuitar](https://sourceforge.net/projects/tuxguitar/) and
 [ZynAddSubFX](http://zynaddsubfx.sourceforge.net/index.html) and
